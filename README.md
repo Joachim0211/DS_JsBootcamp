@@ -1,2 +1,0 @@
-# DS_JsBootcamp
-Weekly_Projects_DS_Bootcamp

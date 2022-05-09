@@ -1,0 +1,60 @@
+#Every line beginning with # is explanation, run those without in the cmd (e.g. git bash!)
+
+
+#open you cmd (e.g. git bash or any), go to the folder you wish or start directly in your home
+mkdir GitTrial
+
+#go into the new folder
+cd GitTrial\
+
+#initiate a new local git repo
+git init
+
+#probably the repo is named master (in parenthesis), change the global config so that it is always main (I believe githup is not accepting master anymore?)
+git config --global init.defaultBranch main
+
+#change to main
+git branch -m main
+
+#show the files including the hidden, you should see .git there and two more . ..
+ls -la
+
+# make a file test.txt
+touch test.txt
+
+# before you can commit it you probably have to tell the git repo your name and e-mail, replace what is in "" accordingly and run it on the cmd
+git config --global user.email "joachim0509@gmail.com"
+git config --global user.name "Joachim"
+
+#now open test.txt with the text editor nano (or any) and write something in it e.g. 'first entry'; to save in nano press 'control+o' 'enter', to exit nano press 'control+x'
+nano test.txt
+
+# now commit the file
+git status
+git add .
+git commit -m "first entry"
+
+# open test.txt in nano again and write 'second entry' in the file
+
+# now commit the file
+git status
+git add .
+git commit -m "second entry"
+
+# open test.txt in nano again and write 'third entry' in the file
+
+# now commit the file
+git status
+git add .
+git commit -m "third entry"
+
+# now run
+git log
+# this will show you your three local commits with all the details in particular the 'commit hash'
+
+# to go back in time for example to the first version run: ( replace my commit hash with the one on your log - pay attention that the first log is the lowest!!)
+git checkout -b oldVersion e770776e9e2fa10f7bb519939c2e50b3085a9079
+
+
+# now you should be on branch 'old version'. When you open test.txt with nano (nano test.txt) it should have only one entry. you can start your work from here again and 
+#save it or merge it into 'main' any time. Thats the original functioning of git - I think - it does not store the full files but just the changes.
